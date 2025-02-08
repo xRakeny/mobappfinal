@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "661622071181",
+    "project_id": "btufinal-ba91a",
+    "storage_bucket": "btufinal-ba91a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:661622071181:android:61fa47cb87c122fe1a27c4",
+        "android_client_info": {
+          "package_name": "com.example.recipeapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2FINo3H3Ybf04ziS6TS2P-zB1c8b-_YQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
