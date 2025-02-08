@@ -14,28 +14,25 @@ class DrinkListFragment : Fragment() {
 
     private lateinit var database: DatabaseReference
     private lateinit var drinkAdapter: DrinkAdapter
-    private val drinkList = mutableListOf<Recipe>() // Using Recipe class for drinks
+    private val drinkList = mutableListOf<Recipe>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_drink_list, container, false) // Make sure this layout exists
+        return inflater.inflate(R.layout.fragment_drink_list, container, false) 
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Initialize Firebase database reference
         database =
             FirebaseDatabase.getInstance("https://btufinal-5dbf3-default-rtdb.firebaseio.com")
                 .getReference("drinks")
 
-        // Setup RecyclerView
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-        // Initialize adapter only once
         drinkAdapter = DrinkAdapter(drinkList)
         recyclerView.adapter = drinkAdapter
 
@@ -124,7 +121,7 @@ class DrinkListFragment : Fragment() {
                     val drink = drinkSnapshot.getValue(Recipe::class.java)
                     drink?.let { drinkList.add(it) }
                 }
-                drinkAdapter.notifyDataSetChanged()  // Update RecyclerView
+                drinkAdapter.notifyDataSetChanged() 
             }
 
             override fun onCancelled(error: DatabaseError) {
