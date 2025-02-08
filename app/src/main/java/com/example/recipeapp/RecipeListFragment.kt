@@ -30,14 +30,13 @@ class RecipeListFragment : Fragment() {
 
         database =
             FirebaseDatabase.getInstance("https://btufinal-5dbf3-default-rtdb.firebaseio.com")
-                .getReference("recipes") // Specify the path "recipes"
+                .getReference("recipes") 
 
         recipeAdapter = RecipeAdapter(recipeList)
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = recipeAdapter
 
-        // Fetch recipes from Firebase
         fetchRecipes()
 
 //        val spaghettiCarbonara = Recipe(
